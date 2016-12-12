@@ -1,0 +1,6 @@
+node_modules
+public/bundle.js
+public/bundle.js.map
+!node_modules/APP
+/.env.js
+*/.DS_Store
