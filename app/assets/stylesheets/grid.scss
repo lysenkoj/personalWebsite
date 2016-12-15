@@ -1,0 +1,22 @@
+#board{
+  margin: 0 auto;
+  border-spacing: 0px;
+}
+
+#board td{
+  border: 1px solid #ddd;
+  width: 18px;
+  height: 18px;
+}
+
+td.snake {
+  background-color: #8CC8DD;
+}
+
+td.empty {
+  background-color: #fff;
+}
+
+td.food {
+  background-color: #B21556;
+}
