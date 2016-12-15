@@ -6,8 +6,8 @@
 
 td {
   border: 1px solid #0c0c0c;
-  width: 18px;
-  height: 18px; }
+  width: 1vw;
+  height: 1vw; }
 
 td.snake {
   background-color: #4e9442; }
@@ -27,3 +27,6 @@ td.food {
 body {
   background-color: #0c0c0c;
   position: fixed; }
+
+.mainContainer {
+  display: flex; }

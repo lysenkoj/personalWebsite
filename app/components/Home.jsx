@@ -11,7 +11,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="mainContainer">
         <table id="board"></table>
         <Score />
         <Link to="/projects">

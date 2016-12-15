@@ -23,8 +23,8 @@ var utils = {
 }
 
 var gameOfSnake = {
-  width: 66,
-  height: 31,
+  width: 76,
+  height: 36,
   stepInterval: null,
   direction: 'right',
   snake:[],
