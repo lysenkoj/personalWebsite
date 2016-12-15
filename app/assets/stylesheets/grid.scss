@@ -1,22 +1,40 @@
 #board{
   margin: 0 auto;
   border-spacing: 0px;
+  border: 2px dashed #4e9442;
+  background-color: #0c0c0c;
 }
 
-#board td{
-  border: 1px solid #ddd;
+td{
+  border: 1px solid #0c0c0c;
   width: 18px;
   height: 18px;
 }
 
 td.snake {
-  background-color: #8CC8DD;
+  background-color: #4e9442;
+}
+
+td.snakeMid {
+  background-color: #976717;
+}
+
+td.snakeBack {
+  background-color: #bb489a;
 }
 
 td.empty {
-  background-color: #fff;
+  background-color: #0c0c0c;
 }
 
 td.food {
-  background-color: #B21556;
+  background-color: #ba489a;
 }
+
+// background-image:
+//     linear-gradient(
+//       to top right,
+//       #4e9442,
+//       #976717,
+//       #bb489a
+//     );

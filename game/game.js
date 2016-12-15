@@ -23,8 +23,8 @@ var utils = {
 }
 
 var gameOfSnake = {
-  width: 12,
-  height: 12,
+  width: 66,
+  height: 31,
   stepInterval: null,
   direction: 'right',
   snake:[],
@@ -52,11 +52,11 @@ var gameOfSnake = {
     // create snake
     var allCells = [].slice.call(document.getElementsByTagName('td'));
 
-    var head = allCells[62];
+    var head = allCells[998];
     utils.setCellStatus(head, 'snake');
     gameOfSnake.snake.push(head);
 
-    var foodStart = allCells[69];
+    var foodStart = allCells[1046];
     utils.setCellStatus(foodStart, 'food');
 
 
@@ -97,14 +97,13 @@ var gameOfSnake = {
   },
 
   spawnFood: function() {
-    let col = Math.floor(Math.random() * this.height)
-    let row = Math.floor(Math.random() * this.width)
+    let row = Math.floor(Math.random() * this.height)
+    let col = Math.floor(Math.random() * this.width)
 
     let newFood = utils.getCell(col, row)
     if(this.snake.indexOf(newFood) < 0) {
       utils.setCellStatus(newFood, 'food')
     } else {
-      console.log('REROLL YOU FOOLLLL!!!!')
       this.spawnFood();
     }
   },
@@ -204,7 +203,7 @@ var gameOfSnake = {
     // Start Auto-Play by running the 'step' function
     // automatically repeatedly every fixed time interval
    if(this.stepInterval === null && this.snake.length) {
-    this.stepInterval = setInterval(this.step.bind(this), 300)
+    this.stepInterval = setInterval(this.step.bind(this), 150)
    } else {
     //stop
     this.stop();
