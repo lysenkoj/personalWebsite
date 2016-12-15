@@ -8,14 +8,7 @@ var utils = {
     cell.setAttribute('data-status', status)
     cell.className = status;
   },
-  //toggle cell
-  // toggleStatus: function(cell) {
-  //   if(utils.getCellStatus(cell) === 'dead') {
-  //     utils.setCellStatus(cell, 'alive');
-  //   } else {
-  //     utils.setCellStatus(cell, 'dead');
-  //   }
-  // },
+
   getCell: function(col,row) {
     return document.getElementById(col + '-' + row);
   }
@@ -29,15 +22,16 @@ var gameOfSnake = {
   direction: 'right',
   snake:[],
 
+
   createAndShowBoard: function () {
     // create <table> element
-    var goltable = document.createElement("tbody");
+    let goltable = document.createElement("tbody");
 
     // build Table HTML
-    var tablehtml = '';
-    for (var h=0; h<this.height; h++) {
+    let tablehtml = '';
+    for (let h=0; h<this.height; h++) {
       tablehtml += "<tr id='row+" + h + "'>";
-      for (var w=0; w<this.width; w++) {
+      for (let w=0; w<this.width; w++) {
         tablehtml += "<td data-status='empty' id='" + w + "-" + h + "'></td>";
       }
       tablehtml += "</tr>";
@@ -45,39 +39,37 @@ var gameOfSnake = {
     goltable.innerHTML = tablehtml;
 
     // add table to the #board element
-    var board = document.getElementById('board');
+    let board = document.getElementById('board');
 
     board.appendChild(goltable);
 
     // create snake
-    var allCells = [].slice.call(document.getElementsByTagName('td'));
-
-    var head = allCells[998];
+    let allCells = [].slice.call(document.getElementsByTagName('td'));
+    console.log(allCells)
+    let head = allCells[998];
     utils.setCellStatus(head, 'snake');
     gameOfSnake.snake.push(head);
 
-    var foodStart = allCells[1046];
+    let foodStart = allCells[1046];
     utils.setCellStatus(foodStart, 'food');
+
+    let logoArray = [allCells[337], allCells[338], allCells[339], allCells[340], allCells[2076], allCells[2077], allCells[2078], allCells[2079], allCells[2080], allCells[2081], allCells[2082], allCells[2083], allCells[2084], allCells[2085], allCells[2086], allCells[2087], allCells[2088], allCells[1848], allCells[1924], allCells[2000], allCells[2012], allCells[1936], allCells[1860], allCells[1784], allCells[1708], allCells[1632], allCells[1556], allCells[1480], allCells[1404], allCells[1328], allCells[1252], allCells[1176], allCells[1100], allCells[1024], allCells[948], allCells[872], allCells[796], allCells[720], allCells[644], allCells[568], allCells[492], allCells[416], allCells[344], allCells[420], allCells[496], allCells[572], allCells[648], allCells[724], allCells[800], allCells[876], allCells[952], allCells[1028], allCells[1104], allCells[1180], allCells[1256], allCells[1332], allCells[1408], allCells[1484], allCells[1560], allCells[1636], allCells[1712], allCells[1788], allCells[1864], allCells[344], allCells[344], allCells[344], allCells[344], allCells[344], allCells[344], allCells[344], allCells[1940], allCells[2016], allCells[2092], allCells[2093], allCells[2094], allCells[2095], allCells[2096], allCells[2097], allCells[2098], allCells[2099], allCells[2100], allCells[2101], allCells[2102], allCells[2103]]
+
+    logoArray.forEach(cell => {
+      utils.setCellStatus(cell, 'logo');
+    })
+
+    let linkArray = [allCells[2455], allCells[2465], allCells[2475], allCells[2485]];
+
+    linkArray.forEach(cell => {
+      utils.setCellStatus(cell, 'link');
+    })
+
 
 
 
     // once html elements are added to the page, attach events to them
     this.setupBoardEvents();
-  },
-
-  forEachCell: function (iteratorFunc) {
-    /*
-      Write forEachCell here. You will have to visit
-      each cell on the board, call the "iteratorFunc" function,
-      and pass into func, the cell and the cell's x & y
-      coordinates. For example: iteratorFunc(cell, x, y)
-    */
-    var allCells = [].slice.call(document.getElementsByTagName('td'));
-
-    allCells.forEach(function(cell) {
-      var splitId = cell.id.split('-');
-      iteratorFunc(cell, splitId[0], splitId[1])
-    })
   },
 
   setupBoardEvents: function() {

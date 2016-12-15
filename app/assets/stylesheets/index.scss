@@ -5,4 +5,39 @@ body {
 
 .mainContainer{
   display: flex;
+  flex-direction: column;
+
+}
+
+.score{
+  color:#4e9442;
+  z-index: 5;
+  position: absolute;
+  margin-top:0.5vh;
+  margin-left:1vw;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 53vw;
+  margin-top:78vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  position: absolute;
+}
+
+#playButton {
+  width: 60px;
+  position: absolute;
+  z-index: 12;
+  margin-top: 86vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }

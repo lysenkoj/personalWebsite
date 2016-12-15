@@ -3,6 +3,7 @@
   border-spacing: 0px;
   border: 2px dashed #4e9442;
   background-color: #0c0c0c;
+  z-index: 0;
 }
 
 td{
@@ -29,6 +30,14 @@ td.empty {
 
 td.food {
   background-color: #ba489a;
+}
+
+td.link {
+  background-color: lightblue;
+}
+
+td.logo {
+  background-color: darkorange;
 }
 
 // background-image:
