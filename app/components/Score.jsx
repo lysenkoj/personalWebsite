@@ -6,7 +6,7 @@ export default class Score extends Component {
   render() {
     return (
       <div className="score">
-      {`SCORE: ${gameOfSnake.snake.length}`}
+        <img src="score.png" width="30%" />
       </div>
     )
   }
