@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-export default class Projects extends Component {
+export default class Portfolio extends Component {
 
   render() {
     return (
       <div>
-      WHERE DOES THIS GO?
+      {"WHERE DOES THIS GO?"}
       </div>
     )
   }

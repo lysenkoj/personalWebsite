@@ -14,7 +14,7 @@ export default class Home extends Component {
         <Score />
         <PlayButton />
         <div className="buttonContainer">
-          <Link to="/home">
+          <Link to="/">
             <button>
               <img src="homeButton.png" width="50%"/>
             </button>
