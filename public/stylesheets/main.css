@@ -1,7 +1,7 @@
 #board {
   margin: 0 auto;
   border-spacing: 0px;
-  border: 2px dashed #4e9442;
+  border: 2px dashed white;
   background-color: #0c0c0c;
   z-index: 0; }
 
@@ -11,25 +11,28 @@ td {
   height: 1vw; }
 
 td.snake {
-  background-color: #4e9442; }
+  background-color: white; }
 
 td.snakeMid {
-  background-color: #976717; }
+  background-color: white; }
 
 td.snakeBack {
-  background-color: #bb489a; }
+  background-color: white; }
 
 td.empty {
   background-color: #0c0c0c; }
 
+td.consumed {
+  background-color: pink; }
+
 td.food {
-  background-color: #ba489a; }
+  background-color: white; }
 
 td.link {
-  background-color: lightblue; }
+  background-color: white; }
 
 td.logo {
-  background-color: darkorange; }
+  background-color: white; }
 
 body {
   background-color: #0c0c0c;
@@ -40,7 +43,7 @@ body {
   flex-direction: column; }
 
 .score {
-  color: #4e9442;
+  color: white;
   z-index: 5;
   position: absolute;
   margin-top: 0.5vh;

@@ -21,6 +21,7 @@ var gameOfSnake = {
   stepInterval: null,
   direction: 'right',
   snake:[],
+  logoArray: null,
 
 
   createAndShowBoard: function () {
@@ -53,9 +54,9 @@ var gameOfSnake = {
     let foodStart = allCells[1046];
     utils.setCellStatus(foodStart, 'food');
 
-    let logoArray = [allCells[337], allCells[338], allCells[339], allCells[340], allCells[2076], allCells[2077], allCells[2078], allCells[2079], allCells[2080], allCells[2081], allCells[2082], allCells[2083], allCells[2084], allCells[2085], allCells[2086], allCells[2087], allCells[2088], allCells[1848], allCells[1924], allCells[2000], allCells[2012], allCells[1936], allCells[1860], allCells[1784], allCells[1708], allCells[1632], allCells[1556], allCells[1480], allCells[1404], allCells[1328], allCells[1252], allCells[1176], allCells[1100], allCells[1024], allCells[948], allCells[872], allCells[796], allCells[720], allCells[644], allCells[568], allCells[492], allCells[416], allCells[344], allCells[420], allCells[496], allCells[572], allCells[648], allCells[724], allCells[800], allCells[876], allCells[952], allCells[1028], allCells[1104], allCells[1180], allCells[1256], allCells[1332], allCells[1408], allCells[1484], allCells[1560], allCells[1636], allCells[1712], allCells[1788], allCells[1864], allCells[344], allCells[344], allCells[344], allCells[344], allCells[344], allCells[344], allCells[344], allCells[1940], allCells[2016], allCells[2092], allCells[2093], allCells[2094], allCells[2095], allCells[2096], allCells[2097], allCells[2098], allCells[2099], allCells[2100], allCells[2101], allCells[2102], allCells[2103]]
+    gameOfSnake.logoArray = [allCells[333], allCells[334], allCells[335], allCells[336], allCells[337], allCells[338], allCells[339], allCells[340], allCells[341], allCells[342], allCells[343], allCells[344], allCells[345], allCells[346], allCells[347], allCells[348], allCells[349], allCells[350], allCells[351], allCells[409], allCells[485], allCells[561], allCells[637], allCells[713], allCells[789], allCells[865], allCells[941], allCells[1017], allCells[1093], allCells[1169], allCells[1245], allCells[1321], allCells[1397], allCells[1473], allCells[1549], allCells[1625], allCells[1701], allCells[1702], allCells[1703], allCells[1704], allCells[1705], allCells[1706], allCells[1707], allCells[1708], allCells[1709], allCells[1710], allCells[1711], allCells[1712], allCells[1713], allCells[1714], allCells[1715], allCells[1716], allCells[1717], allCells[1718], allCells[427], allCells[503], allCells[579], allCells[655], allCells[731], allCells[807], allCells[883], allCells[959], allCells[1035], allCells[1111], allCells[1187], allCells[1263], allCells[1339], allCells[1415], allCells[1491], allCells[1567], allCells[1643], allCells[1719], allCells[569], allCells[645], allCells[721], allCells[797], allCells[873], allCells[949], allCells[1025], allCells[1101], allCells[1177], allCells[1253], allCells[1329], allCells[1405], allCells[1481], allCells[1476], allCells[1477], allCells[1478], allCells[1479], allCells[1480], allCells[1483], allCells[1484], allCells[1485], allCells[1486], allCells[1487], allCells[1488], allCells[1324], allCells[1400], allCells[571], allCells[647], allCells[723], allCells[799], allCells[875], allCells[951], allCells[1027], allCells[1103], allCells[1179], allCells[1255], allCells[1331], allCells[1407], allCells[1483]]
 
-    logoArray.forEach(cell => {
+    gameOfSnake.logoArray.forEach(cell => {
       utils.setCellStatus(cell, 'logo');
     })
 
@@ -118,6 +119,9 @@ var gameOfSnake = {
           utils.setCellStatus(newHead, 'snake')
           this.snake.unshift(newHead);
           this.spawnFood()
+        } else if(newHead.getAttribute('data-status') === 'logo') {
+          utils.setCellStatus(newHead, 'snake')
+          this.snake.unshift(newHead);
         } else {
           utils.setCellStatus(newHead, 'snake')
           this.snake.unshift(newHead);
@@ -139,6 +143,9 @@ var gameOfSnake = {
             utils.setCellStatus(newHead, 'snake')
             this.snake.unshift(newHead);
             this.spawnFood()
+          } else if(newHead.getAttribute('data-status') === 'logo') {
+            utils.setCellStatus(newHead, 'snake')
+            this.snake.unshift(newHead);
           } else {
             utils.setCellStatus(newHead, 'snake')
             this.snake.unshift(newHead);
@@ -160,6 +167,9 @@ var gameOfSnake = {
             utils.setCellStatus(newHead, 'snake')
             this.snake.unshift(newHead);
             this.spawnFood()
+          } else if(newHead.getAttribute('data-status') === 'logo') {
+            utils.setCellStatus(newHead, 'snake')
+            this.snake.unshift(newHead);
           } else {
             utils.setCellStatus(newHead, 'snake')
             this.snake.unshift(newHead);
@@ -181,6 +191,9 @@ var gameOfSnake = {
             utils.setCellStatus(newHead, 'snake')
             this.snake.unshift(newHead);
             this.spawnFood()
+          } else if(newHead.getAttribute('data-status') === 'logo') {
+            utils.setCellStatus(newHead, 'snake')
+            this.snake.unshift(newHead);
           } else {
             utils.setCellStatus(newHead, 'snake')
             this.snake.unshift(newHead);
@@ -189,6 +202,12 @@ var gameOfSnake = {
           }
         }
     }
+
+    gameOfSnake.logoArray.forEach(cell => {
+      if(cell.getAttribute('data-status') === 'empty'){
+        utils.setCellStatus(cell, 'consumed');
+      }
+    })
   },
 
   play: function () {
